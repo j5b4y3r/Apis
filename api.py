@@ -27,7 +27,6 @@ def search_storyblocks_video(query: str, num_videos: int = 5):
     first_word = query_parts[0].lower()
     video_info = []
     
-    # URL encoding for spaces
     search_urls = [
         f"https://www.storyblocks.com/all-video/search/{query.replace(' ', '%20')}",
         f"https://www.storyblocks.com/all-video/search/{first_word}"
@@ -81,7 +80,7 @@ def extract_download_url(storyblocks_url: str):
 
 @app.get("/")
 async def root():
-    return {"message": "Storyblocks API is running. Use /search or /get-download-link"}
+    return {"message": "Storyblocks API is running on Render."}
 
 @app.get("/search", response_model=List[VideoResult])
 async def search(q: str, limit: int = 5):
@@ -96,6 +95,6 @@ async def get_link(url: str):
 
 if __name__ == "__main__":
     import uvicorn
-    # Railway provides the PORT environment variable
-    port = int(os.environ.get("PORT", 8000))
+    # Render uses the PORT environment variable
+    port = int(os.environ.get("PORT", 10000))
     uvicorn.run(app, host="0.0.0.0", port=port)
