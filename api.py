@@ -67,6 +67,9 @@ def extract_download_url(storyblocks_url: str):
         "Referer": "https://steptodown.com/storyblocks-downloader/",
         "Origin": "https://steptodown.com",
         "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": "cf_clearance=cR08Dn6lrvAYwrzrYtx9p1wTyJqL1fN4eTuRjytkbWM-1773742105-1.2.1.1-MItCwzZakxm1IMfcLQvIwbNNQGoUIVqIkwlRurLHZ4S5nF9DWejpngy5w182n1t_pFij2Y88CHH5vh5Xs79n3bUNAZZ7XxhTKMjmlC863dHVlw8kClyJ_uwC_TYq1jSK9exQSr_hiBUB5xNqIiI9KI6YMAnDxpVfgGpjhfROgsqpiCmsXGwMkhcFOu.U6Cf_M6W_vrHvXt94tmn3UVqIOHadUKw9ZMXa90EMJjLxKtE; pll_language=en; PHPSESSID=u9rnmh6b90dadl7qgqk18rl9p4",
+        "Host": "steptodown.com",
+        "Sec-Fetch-Site": "same-origin",
     }
     try:
         rs = requests.post(base_url, data={"url": storyblocks_url}, headers=headers, timeout=15)
